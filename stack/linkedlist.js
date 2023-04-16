@@ -44,20 +44,20 @@ class Stack {
     }
 
 
-    display() {
-        if(this.head === null) {
-            console.log('List is empty');
-            return -1;
-        } else {
-            let current = this.head ;
-            let stackItems = ''
-            while(current) {
-                stackItems = stackItems + '-->' + current.value;
-                current = current.next;
-            }
-            console.log(stackItems);
-        }
-    }
+    // display() {
+    //     if(this.head === null) {
+    //         console.log('List is empty');
+    //         return -1;
+    //     } else {
+    //         let current = this.head ;
+    //         let stackItems = ''
+    //         while(current) {
+    //             stackItems = stackItems + '-->' + current.value;
+    //             current = current.next;
+    //         }
+    //         console.log(stackItems);
+    //     }
+    // }
 }
 
 
@@ -80,4 +80,4 @@ myStack.pop();
 myStack.peak();
 
 
-myStack.display();
+// myStack.display();
