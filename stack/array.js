@@ -30,8 +30,8 @@ class Stack {
             console.log('Stack is empty');
             return -1 ;
         } else {
-          console.log(this.stack[this.stack.length-1]);
-          return this.stack[length-1];
+        //   console.log(this.stack[this.stack.length-1]);
+          return this.stack[this.stack.length-1];
         }
     }
 
@@ -54,21 +54,23 @@ myStack.push(30)
 console.log(myStack)
 
 myStack.pop();
-console.log(myStack)
+// console.log(myStack)
 
 myStack.push(40);
-console.log(myStack)
+// console.log(myStack)
 
-myStack.pop();
-console.log(myStack)
+myStack.peak();
 
-myStack.pop();
-console.log(myStack)
+// myStack.pop();
+// console.log(myStack)
 
-myStack.push(50);
-console.log(myStack)
+// myStack.pop();
+// console.log(myStack)
 
-myStack.pop()
-myStack.pop()
+// myStack.push(50);
+// console.log(myStack)
 
-console.log(myStack);
+// myStack.pop()
+// myStack.pop()
+
+// console.log(myStack);
