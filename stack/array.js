@@ -1,14 +1,17 @@
 class Stack {
     constructor() {
         this.stack = [];
+        this.size = 0;
     }
 
 
     push(value) {
-        if(this.stack.length === 0) {
-            this.stack[0] = value
+        if(this.size === 0) {
+            this.stack[0] = value;
+            this.size++;
         } else {
-            this.stack[this.stack.length] = value;
+            this.stack[this.size] = value;
+            this.size++;
         }
         return this.stack;
     }
@@ -18,25 +21,26 @@ class Stack {
             console.log('Stack is empty');
             return -1 ;
         } else {
-            let lastElement = this.stack[this.stack.length - 1] ;
-            this.stack.length = this.stack.length - 1;
+            let lastElement = this.stack[this.size - 1] ;
+            this.stack.length--;
+            this.size--;
             return lastElement;
         }
        
     }
 
     peak() {
-        if(this.stack.length === 0 ) {
+        if(this.size === 0 ) {
             console.log('Stack is empty');
             return -1 ;
         } else {
         //   console.log(this.stack[this.stack.length-1]);
-          return this.stack[this.stack.length-1];
+          return this.stack[this.size-1];
         }
     }
 
     display() {
-        for(let i = 0 ; i < this.stack.length ; i++) {
+        for(let i = 0 ; i < this.size ; i++) {
             console.log(this.stack[i]);
         }
     }
@@ -54,23 +58,25 @@ myStack.push(30)
 console.log(myStack)
 
 myStack.pop();
-// console.log(myStack)
+console.log(myStack)
 
 myStack.push(40);
-// console.log(myStack)
+console.log(myStack)
 
 myStack.peak();
 
-// myStack.pop();
-// console.log(myStack)
+myStack.pop();
+console.log(myStack)
 
-// myStack.pop();
-// console.log(myStack)
+myStack.pop();
+console.log(myStack)
 
-// myStack.push(50);
-// console.log(myStack)
+myStack.push(50);
+console.log(myStack)
 
-// myStack.pop()
-// myStack.pop()
+myStack.pop()
+console.log(myStack);
 
-// console.log(myStack);
+myStack.pop()
+
+console.log(myStack);
