@@ -17,7 +17,6 @@ function merge_sort(arr = []) {
      
 }
 
-
 function merge(left = [] , right = []) {
     let i = 0 ;
     let j = 0 ;
