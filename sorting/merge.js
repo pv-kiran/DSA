@@ -3,6 +3,7 @@ let arr = [23,45,1,3,12,10,9 , 122,11];
 let sortedArr = merge_sort(arr);
 console.log(sortedArr)
 
+
 function merge_sort(arr = []) {
     if(arr.length == 1) {
         return arr;
@@ -17,12 +18,12 @@ function merge_sort(arr = []) {
      
 }
 
+
 function merge(left = [] , right = []) {
     let i = 0 ;
     let j = 0 ;
     let k = 0 ;
     let mergedArr = [];
-
     while(i < left.length && j < right.length) {
         if(left[i] < right[j]) {
             mergedArr[k] = left[i];
@@ -48,3 +49,4 @@ function merge(left = [] , right = []) {
 
     return mergedArr;
 }
+

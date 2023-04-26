@@ -1,23 +1,24 @@
-let arr = [23 , 45 ,122  , 0 , 1, 3 , 12 , 10 , 9  , 11 , 21  , 100];
-const res = selection_sort(arr);
-console.log(res);
+// let arr = [23 , 45 ,122  , 0 , 1, 3 , 12 , 10 , 9  , 11 , 21  , 100];
+// const res = selection_sort(arr);
+// console.log(res);
 
 
 // selecting an element and insert it in the correct postion in the array ( largest)
-function selection_sort(a = []){
-   for(let i = arr.length-1 ; i >= 0 ;i--) {
-      let largest = i ;
-      for(let j = i - 1 ; j >= 0 ; j--) {
-         if(a[j] > a[largest]) {
-            largest = j;
-         }
-      }
-      let temp = a[i];
-      a[i] = a[largest];
-      a[largest] = temp
-   }
-   return a;
-}
+// function selection_sort(a = []) {
+
+//    for(let i = arr.length-1 ; i >= 0 ;i--) {
+//       let largest = i ;
+//       for(let j = i - 1 ; j >= 0 ; j--) {
+//          if(a[j] > a[largest]) {
+//             largest = j;
+//          }
+//       }
+//       let temp = a[i];
+//       a[i] = a[largest];
+//       a[largest] = temp
+//    }
+//    return a;
+// }
 
 
 

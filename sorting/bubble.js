@@ -3,19 +3,19 @@ let arr = [2,4,1,8,5,6,9,3];
 
 
 for(let i = 0 ; i < arr.length ; i++) {
-    // let swaped = false ;
+    let swaped = false ;
     for(let j = 1  ; j < arr.length - i ; j++ ) {
         if(arr[j] < arr[j-1]){
             let temp = arr[j-1];
             arr[j-1] = arr[j];
             arr[j] = temp;
-            // swaped = true
+            swaped = true
         }
     }
     // console.log(swaped);
-    // if(!swaped) {
-    //     break;
-    // }
+    if(!swaped) {
+        break;
+    }
 }
 
 console.log(arr);

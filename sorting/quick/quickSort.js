@@ -1,4 +1,4 @@
-let arr  = [1,4,6,7,8 ,10,9];
+let arr  = [1,4,6,100,7,8 ,10,9];
 
 
 quick_sort(arr , 0 , arr.length - 1);
@@ -10,6 +10,7 @@ function quick_sort(a = [] , start , end) {
    let low = start ;
    let high = end;
    let mid = Math.ceil((low+high) / 2) ;
+   // mid =  10
    let pivot = a[mid];
    while( start <= end ) {
       while(a[start] < pivot ) {
