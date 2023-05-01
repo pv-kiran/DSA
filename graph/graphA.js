@@ -1,0 +1,70 @@
+class Graph {
+    constructor() {
+       this.adjasencyList = {}
+    }
+
+    addVertex(vertex) {
+        if(!this.adjasencyList[vertex]) {
+            this.adjasencyList[vertex] = [];
+         }
+    }
+
+    addEdge(v1 , v2) {
+        if(!this.adjasencyList[v1]) {
+            this.adjasencyList[v1] = [];
+        }
+        if(!this.adjasencyList[v2]) {
+            this.adjasencyList[v2] = [];
+        }
+        this.adjasencyList[v1].push(v2);
+        this.adjasencyList[v2].push(v1);
+    } 
+
+    removeEdge(v1 , v2) {
+        if(!this.adjasencyList[v1] || !this.adjasencyList[v2]) {
+            console.log('Vertex is invalid');
+        } else {
+            this.adjasencyList[v1] = this.adjasencyList[v1].filter(v => v != v2);
+            this.adjasencyList[v2] = this.adjasencyList[v2].filter(v => v != v1);
+        }
+    }
+
+    removeVertex(vertex) {
+        if(!this.adjasencyList[vertex]) {
+            console.log('Vertex is invalid');
+        } else {
+            for(let adjacentVertex of this.adjasencyList[vertex]) {
+               this.removeEdge(vertex , adjacentVertex);
+            }
+            delete this.adjasencyList[vertex];
+        }
+    }
+}
+
+
+const myGraph = new Graph();
+// myGraph.addVertex('Tokyo');
+// myGraph.addVertex('Paris');
+// myGraph.addVertex('Malawi');
+// console.log(myGraph);
+
+
+myGraph.addEdge('Tokyo' , 'paris');
+// console.log(myGraph);
+
+myGraph.addEdge('Tokyo' , 'malawi');
+// console.log(myGraph);
+
+myGraph.addEdge('paris' , 'malawi');
+// console.log(myGraph);
+
+myGraph.removeVertex('Tokyo')
+
+console.log(myGraph)
+
+
+// myGraph.removeEdge('Tokyo' , 'paris');
+// myGraph.removeEdge('Tokyo' , 'malawi');
+
+// console.log(myGraph)
+
