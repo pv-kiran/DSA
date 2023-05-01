@@ -154,29 +154,29 @@ class BST {
     }
 
     validateBST(root , minValue , maxValue) {
-        console.log(maxValue)
-        console.log(minValue)
+        // console.log(maxValue)
+        // console.log(minValue)
 
         if(root === null) {
             return true;
         }
         if(root.value >= maxValue || root.value <= minValue) {
-            console.log(maxValue);
-            console.log(minValue);
-            console.log(root.value)
+            // console.log(maxValue);
+            // console.log(minValue);
+            // console.log(root.value)
             return false;
         } 
         else {
-            console.log(root.value);
-            console.log(minValue)
-            console.log(maxValue)
+            // console.log(root.value);
+            // console.log(minValue)
+            // console.log(maxValue)
             return this.validateBST(root.left , minValue , root.value) && this.validateBST(root.right , root.value , maxValue);
         }
     }
 
 }
 
-const bst = new BST();
+// const bst = new BST();
 
 // insertion and searching
 
@@ -194,12 +194,12 @@ const bst = new BST();
 // console.log( 7 > Number.MAX_VALUE)
 // Insertion and preorder
 
-bst.insert(10);
-bst.insert(7);
-bst.insert(5);
-bst.insert(8);
-bst.insert(15);
-bst.insert(3);
+// bst.insert(10);
+// bst.insert(7);
+// bst.insert(5);
+// bst.insert(8);
+// bst.insert(15);
+// bst.insert(3);
 // bst.insert(6);
 
 // console.log(bst.isBST(bst.root  ,   Number.MIN_VALUE , Number.MAX_VALUE )) 
@@ -220,7 +220,7 @@ bst.insert(3);
 
 // bst.delete(bst.root , 10);
 
-bst.levelOrder();
+// bst.levelOrder();
 
 // console.log(bst.maxValue(bst.root));
 // console.log(bst.minValue(bst.root));

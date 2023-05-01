@@ -129,3 +129,92 @@
 // }
 
 
+// let arr = [1,4,6,8,10];
+// let newEl = 7;
+// let index = 0 ;
+// while(arr[index]) {
+//     if(arr[index] < newEl) {
+//         index++ ;
+//     } else {
+//         break;
+//     }
+// }
+
+// for(let i = arr.length - 1 ; i >= index ; i-- ) {
+//    arr[i+1] =arr[i];
+// }
+
+// arr[index] = newEl;
+// console.log(arr)
+
+
+
+// let arr  = [10 , 30 , 5 , 100 , 2 , 9 , 1 ,5 , 6];
+// let i = 0;
+// let j = 0;
+// while(arr[i]) {
+//     i = i+2;
+//     j = j+1;
+// }
+
+// console.log(arr[j-1])
+
+
+
+
+// let j = 0;
+
+// for(let i = 0 ; i < arr.length  ; i = i + 2 ) {
+//      let temprory = arr[j + 1];
+//      console.log(temprory);
+//      if(arr[i] > arr[arr.length - 1]) {
+//         let temp = arr[i];
+//         arr[i] = arr[arr.length - 1];
+//         arr[i+1] = temp;
+//      }
+     
+//      arr[arr.length - 1] = temprory;
+//      j++;
+
+// }
+
+// console.log(arr)
+
+// let arr = [53,90,192,40 , 999];
+// let arr = [ 90 , 80 , 9 , 99 , 33 , 34 , 79 , 88 , 4, 5,1];
+
+// let arr = [10, 2]
+// let tempArr= [];
+
+// for(let i = 0 ; i < arr.length ; i++) {
+//     let temp;
+//     let number = arr[i];
+//     while(number > 0) {
+//        temp = number;
+//        number = Math.floor(number / 10)
+//     }
+//     tempArr.push(temp);
+// }
+
+
+// let largestSeq = '' ;
+
+// for(let i = 0 ; i < arr.length ; i++) {
+//     for(let j = 0 ; j < arr.length - 1 - i ; j++) {
+//         if(tempArr[j] > tempArr[j+1]) {
+//             let temp = arr[j];
+//             arr[j] = arr[j+1] ;
+//             arr[j+1] = temp 
+//         }
+//         if(tempArr[j] > tempArr[j+1]) {
+//             let temp = tempArr[j];
+//             tempArr[j] = tempArr[j+1] ;
+//             tempArr[j+1] = temp 
+//         }
+//     }
+
+//     largestSeq = largestSeq + ' ' + arr[arr.length-1-i]
+// }
+// console.log(largestSeq)
+
+

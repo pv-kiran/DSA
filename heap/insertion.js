@@ -58,7 +58,7 @@ class Heap {
 }
 
 
-const heap = new Heap();
+// const heap = new Heap();
 // heap.insert_into(100);
 // heap.insert_into(200);
 // heap.insert_into(50);
@@ -73,12 +73,12 @@ const heap = new Heap();
 
 
 
-let max = [10,30,20,100,40 , 60, 12 , 200];
-heap.build_max_heap(max)
-console.log(max)
+// let max = [10,30,20,100,40 , 60, 12 , 200];
+// heap.build_max_heap(max)
+// console.log(max)
 
-heap.extract_max(max);
-console.log(max);
+// heap.extract_max(max);
+// console.log(max);
 
 // heap.heap_sort(max)
 // console.log(max)
