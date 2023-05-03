@@ -56,7 +56,7 @@ class BST {
         }
       }
     }
-
+ 
     // DFS
     preorder(root) {
        if(root) {

@@ -20,15 +20,15 @@ class Graph {
         this.adjacensyList[v2].push(v1);
     }
 
-    depthFirstRecursive(start) {
+    depthFirstRecursive(start) { 
        let result = [];
        let visited = {};
        let adjacensyList = this.adjacensyList;
        function dfs(vertex) {
 
-         if(!vertex) {
-            return null;
-         } 
+        //  if(!vertex) {
+        //     return null;
+        //  } 
          visited[vertex] = true;
          result.push(vertex);
          adjacensyList[vertex].forEach(neighbour => {
@@ -41,8 +41,6 @@ class Graph {
        console.log(result)
     }
 
-
-
     depthFirstItretive(start) {
         let stack = [start];
         let result = [];
@@ -54,12 +52,13 @@ class Graph {
             this.adjacensyList[currentVertex].forEach(neighbour => {
                 if(!visted[neighbour]) {
                     visted[neighbour] = true;
-                    stack.push(neighbour);
+                    stack.push(neighbour); 
                 }
             })
         }
         console.log(result);
     }
+
 
     breadthFirst(start) {
         const queue = [start];

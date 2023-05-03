@@ -18,7 +18,7 @@ class Graph {
        }
 
        this.adjasencyList[vertexOne].add(vertexTwo);
-       this.adjasencyList[vertexTwo].add(vertexOne);
+    //    this.adjasencyList[vertexTwo].add(vertexOne);
     }
 
     hasEdge(vertexOne , vertexTwo) {
@@ -45,6 +45,29 @@ class Graph {
             console.log(vertex + '-->' + [...this.adjasencyList[vertex]]);
         }
     }
+
+
+    allValidPaths(start, end) {
+        let visited = {}
+        let result = []
+        let adjList = this.adjasencyList
+        function DFSearch(start, arr = []) {
+            arr.push(start)
+            visited[start] = true
+            if (start === end) {
+                result.push(arr)
+            }
+            for (let item of adjList[start]) {
+                if (!visited[item]) {
+                    visited[item] = true
+                    DFSearch(item, [...arr])
+                }
+            }
+            visited[start] = false
+        }
+        DFSearch(start)
+        return result
+    }
 }
 
 
@@ -57,16 +80,23 @@ const myGraph = new Graph();
 // myGraph.addEdge('F' , 'G');c
 // myGraph.addEdge('H' , 'I');
 
-myGraph.addEdge('A' , 'B');
-myGraph.addEdge('B' , 'C');
+// myGraph.addEdge('A' , 'B');
+// myGraph.addEdge('B' , 'C');
 
-myGraph.display()
+// myGraph.display()
 
-console.log(myGraph.hasEdge('A' , 'B'));
-console.log(myGraph.hasEdge('B' , 'A'));
+// console.log(myGraph.hasEdge('A' , 'B'));
+// console.log(myGraph.hasEdge('B' , 'A'));
 
-myGraph.removeVertex('B');
+// myGraph.removeVertex('B');
+// myGraph.addEdge("A", "B")
+// myGraph.addEdge("A", "D")
+// myGraph.addEdge("C", "D")
+// myGraph.addEdge("B", "D")
+// myGraph.addEdge("E", "D")
+// myGraph.addEdge("E", "A")
 
+// console.log(myGraph.allValidPaths("A", "E"))
 
 console.log(myGraph);
 
@@ -74,3 +104,12 @@ console.log(myGraph);
 // myGraph.removeEdge('A' , 'B');
 
 // console.log(myGraph);
+
+myGraph.addEdge('A' , 'B')
+myGraph.addEdge('B' , 'C')
+myGraph.addEdge('C' , 'D')
+myGraph.addEdge('B' , 'D')
+myGraph.addEdge('D' , 'A')
+
+console.log(myGraph)
+console.log(myGraph.allValidPaths('A' , 'C'))

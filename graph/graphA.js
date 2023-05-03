@@ -20,7 +20,7 @@ class Graph {
         this.adjasencyList[v2].push(v1);
     } 
 
-    removeEdge(v1 , v2) {
+    removeEdge(v1 , v2) { 
         if(!this.adjasencyList[v1] || !this.adjasencyList[v2]) {
             console.log('Vertex is invalid');
         } else {
@@ -39,6 +39,29 @@ class Graph {
             delete this.adjasencyList[vertex];
         }
     }
+
+    findAllPaths(start , end) {
+        let result = [];
+        let visited = {};
+        let adjList = this.adjasencyList ;
+        function dfs(start , arr = []) {
+           arr.push(start);
+           visited[start] = true ;
+           if(start === end) {
+              result.push(arr);
+           } 
+           for(let vertex of adjList[start]) {
+                if(!visited[vertex]) {
+                    visited[vertex] = true;
+                    dfs(vertex , [...arr])
+                }
+           }
+           visited[start] = false;
+        }
+        dfs(start);
+        console.log(result);
+    }
+
 }
 
 
@@ -49,22 +72,36 @@ const myGraph = new Graph();
 // console.log(myGraph);
 
 
-myGraph.addEdge('Tokyo' , 'paris');
+// myGraph.addEdge('Tokyo' , 'paris');
+// // console.log(myGraph);
+
+// myGraph.addEdge('Tokyo' , 'malawi');
+// // console.log(myGraph);
+
+// myGraph.addEdge('paris' , 'malawi');
 // console.log(myGraph);
 
-myGraph.addEdge('Tokyo' , 'malawi');
-// console.log(myGraph);
+// myGraph.removeVertex('Tokyo')
 
-myGraph.addEdge('paris' , 'malawi');
-// console.log(myGraph);
-
-myGraph.removeVertex('Tokyo')
-
-console.log(myGraph)
+// console.log(myGraph)
 
 
 // myGraph.removeEdge('Tokyo' , 'paris');
 // myGraph.removeEdge('Tokyo' , 'malawi');
 
 // console.log(myGraph)
+
+myGraph.addEdge("A", "B")
+myGraph.addEdge("A", "D")
+myGraph.addEdge("C", "D")
+myGraph.addEdge("B", "D")
+myGraph.addEdge("E", "D")
+myGraph.addEdge("E", "A")
+
+// console.log(myGraph.findAllPaths("A", "E"))
+
+// myGraph.hasCycle();
+
+
+
 

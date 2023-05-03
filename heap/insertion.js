@@ -1,9 +1,11 @@
 class Heap {
+
+
     constructor() {
         this.max_heap = [];
     }
 
-    insert_into(value) {
+    insert(value) {
        if(this.max_heap.length === 0) {
           this.max_heap[0] = value;
        } else {
@@ -16,6 +18,7 @@ class Heap {
               this.max_heap[index] = temp;
               index = Math.floor(index / 2);
            } 
+           
        }
     }
 
@@ -56,6 +59,22 @@ class Heap {
        return max;
     }
 }
+
+
+const maxHeap = new Heap();
+maxHeap.insert(10);
+maxHeap.insert(50);
+maxHeap.insert(100);
+maxHeap.insert(60);
+maxHeap.insert(30);
+maxHeap.insert(90);
+maxHeap.insert(70);
+maxHeap.insert(80);
+maxHeap.insert(40);
+maxHeap.insert(20);
+
+
+console.log(maxHeap)
 
 
 // const heap = new Heap();
