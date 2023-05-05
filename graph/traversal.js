@@ -55,7 +55,7 @@ class Graph {
                     stack.push(neighbour); 
                 }
             })
-        }
+        }  
         console.log(result);
     }
 

@@ -9,6 +9,9 @@ class Node {
 class BST {
     constructor(){
         this.root = null;
+        this.close = 0;
+        this.largest = Number.MAX_VALUE;
+        this.difference = 0;
     }
 
     isEmpty() {
@@ -173,10 +176,40 @@ class BST {
             return this.validateBST(root.left , minValue , root.value) && this.validateBST(root.right , root.value , maxValue);
         }
     }
+    
+    closest(root , value ) {
+        if(!root) {
+            return this.close
+        }
+        if(root.value === value) {
+            this.close = root.value;
+            return root;
+        }
+        else {
+            if(value < root.value) {
+                this.difference = Math.abs(value - root.value) ;
+                console.log(this.difference);
+                if(this.difference < this.largest) {
+                    this.largest = this.difference;
+                    this.close = root.value
+                }
+                return this.closest(root.left , value);
+            }
+            if(value > root.value) {
+                this.difference = Math.abs(value - root.value) ;
+                if(this.difference < this.largest) {
+                    this.largest = this.difference;
+                    this.close = root.value
+                }
+                return this.closest(root.right, value);
+            }
+        }
+        // return this.close;
+    }
 
 }
 
-// const bst = new BST();
+const bst = new BST();
 
 // insertion and searching
 
@@ -194,13 +227,13 @@ class BST {
 // console.log( 7 > Number.MAX_VALUE)
 // Insertion and preorder
 
-// bst.insert(10);
-// bst.insert(7);
-// bst.insert(5);
-// bst.insert(8);
-// bst.insert(15);
-// bst.insert(3);
-// bst.insert(6);
+bst.insert(100);
+bst.insert(50);
+bst.insert(120);
+bst.insert(30);
+bst.insert(80);
+bst.insert(110);
+bst.insert(150);
 
 // console.log(bst.isBST(bst.root  ,   Number.MIN_VALUE , Number.MAX_VALUE )) 
 
@@ -215,7 +248,9 @@ class BST {
 // bst.delete(bst.root , 3);
 
 // bst.preorder(bst.root);
-// bst.inorder(bst.root);
+bst.inorder(bst.root);
+
+console.log(bst.closest(bst.root ,130))
 // bst.postorder(bst.root);
 
 // bst.delete(bst.root , 10);

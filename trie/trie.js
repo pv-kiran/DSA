@@ -51,8 +51,8 @@ class Trie {
             console.log(Object.entries(node.children))
 
             for (let [char, childNode] of Object.entries(node.children)) {
-                console.log(char)
-                console.log(childNode)
+                // console.log(char)
+                // console.log(childNode)
                 traverseHelper(childNode, word + char)
             }
 
