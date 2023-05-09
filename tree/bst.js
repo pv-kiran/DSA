@@ -110,6 +110,21 @@ class BST {
       }
     }
 
+    secondSmallest(root) {
+        if(!root.left.left) {
+            return root.value;
+        } else {
+            return this.secondSmallest(root.left);
+        }
+    }
+    secondLargest(root) {
+        if(!root.right.right) {
+            return root.value;
+        } else {
+            return this.secondLargest(root.right);
+        }
+    }
+
     maxValue(root) {
         if(!root.right) {
             return root.value;
@@ -227,13 +242,17 @@ const bst = new BST();
 // console.log( 7 > Number.MAX_VALUE)
 // Insertion and preorder
 
-bst.insert(100);
-bst.insert(50);
-bst.insert(120);
-bst.insert(30);
-bst.insert(80);
-bst.insert(110);
-bst.insert(150);
+// bst.insert(100);
+// bst.insert(50);
+// bst.insert(120);
+// bst.insert(30);
+// bst.insert(20);
+// bst.insert(80);
+// bst.insert(110);
+// bst.insert(150);
+
+// console.log(bst.secondSmallest(bst.root));
+// console.log(bst.secondLargest(bst.root))
 
 // console.log(bst.isBST(bst.root  ,   Number.MIN_VALUE , Number.MAX_VALUE )) 
 
@@ -248,9 +267,9 @@ bst.insert(150);
 // bst.delete(bst.root , 3);
 
 // bst.preorder(bst.root);
-bst.inorder(bst.root);
+// bst.inorder(bst.root);
 
-console.log(bst.closest(bst.root ,130))
+// console.log(bst.closest(bst.root ,130))
 // bst.postorder(bst.root);
 
 // bst.delete(bst.root , 10);
