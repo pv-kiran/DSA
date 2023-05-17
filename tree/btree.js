@@ -8,7 +8,9 @@ class Node {
 
 class Btree {
     constructor() {
-        this.root = null ;
+      this.root = null;
+      this.largest = Number.MIN_VALUE,
+      this.secondLargest = Number.MIN_VALUE
     }
 
     insert(value) {
@@ -37,10 +39,20 @@ class Btree {
     inorder(root) {
       if(root) {
         this.inorder(root.left)
-        console.log(root.value);
+        // console.log(root.value);
+        if (root.value > this.largest) {
+          this.secondLargest = this.largest; 
+          this.largest = root.value;
+        }
+        if (root.value != this.largest && root.value > this.secondLargest) {
+          this.secondLargest = root.value;
+        }
+        // console.log(this.secondLargest)
         this.inorder(root.right);
       }
-    }
+  }
+  
+
 }
 
 
@@ -50,6 +62,8 @@ btree.insert(200);
 btree.insert(300);
 btree.insert(400);
 btree.insert(500);
-console.log(btree);
+// console.log(btree);
+
 
 btree.inorder(btree.root)
+console.log(btree.secondLargest)
